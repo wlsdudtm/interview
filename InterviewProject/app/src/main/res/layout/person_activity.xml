@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.interviewproject.viewmodel.PersonViewModel"
+            />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/person_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{viewModel.personCountText}"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            tools:text="총 10명의 사용자가 있습니다."
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/person_count_text"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            app:visibility="@{viewModel.recyclerViewVisibility}"
+            android:clipToPadding="false"
+            />
+
+    </RelativeLayout>
+
+
+</layout>
